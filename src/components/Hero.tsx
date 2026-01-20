@@ -1,23 +1,26 @@
 import { motion } from 'framer-motion';
-import { HiLightningBolt, HiMail, HiUser } from 'react-icons/hi'; 
+import { HiLightningBolt, HiMail, HiUser, HiSparkles } from 'react-icons/hi'; 
 import { SiReact, SiTypescript, SiLaravel, SiTailwindcss, SiFirebase, SiFramer, SiJavascript } from 'react-icons/si';
 
-// Komponen Floating Rune (Tetap sama)
+// Komponen Floating Rune (Dipertajam visualnya)
 const FloatingRune = ({ icon, color, top, left, right, bottom, delay, size = "md" }: any) => {
-  const sizeClasses = size === "lg" ? "w-14 h-14 text-3xl" : "w-10 h-10 text-xl";
+  const sizeClasses = size === "lg" ? "w-16 h-16 text-4xl" : "w-12 h-12 text-2xl";
   const style: any = { top, left, right, bottom }; 
   
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: [0.3, 0.7, 0.3], y: [0, -25, 0], rotate: [0, 10, -10, 0] }}
-      transition={{ duration: 8, delay: delay, repeat: Infinity, ease: "easeInOut" }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: [0.2, 0.6, 0.2], y: [0, -30, 0], rotate: [0, 15, -15, 0] }}
+      transition={{ duration: 10, delay: delay, repeat: Infinity, ease: "easeInOut" }}
       style={style}
-      className={`absolute ${sizeClasses} flex items-center justify-center bg-white/30 backdrop-blur-md border border-white/50 rounded-xl shadow-lg z-0 pointer-events-none`}
+      className={`absolute ${sizeClasses} flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] z-0 pointer-events-none`}
     >
-      <div className="absolute -top-[1px] -left-[1px] w-2 h-2 border-t-2 border-l-2 border-gold-400 rounded-tl opacity-80" />
-      <div className="absolute -bottom-[1px] -right-[1px] w-2 h-2 border-b-2 border-r-2 border-gold-400 rounded-br opacity-80" />
-      <div style={{ color }}>{icon}</div>
+      {/* Sudut Tech */}
+      <div className="absolute -top-[1px] -left-[1px] w-3 h-3 border-t-2 border-l-2 border-amber-400/50 rounded-tl-lg" />
+      <div className="absolute -bottom-[1px] -right-[1px] w-3 h-3 border-b-2 border-r-2 border-amber-400/50 rounded-br-lg" />
+      
+      {/* Icon Glow */}
+      <div style={{ color }} className="drop-shadow-lg filter">{icon}</div>
     </motion.div>
   );
 };
@@ -29,158 +32,191 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-slate-50 selection:bg-gold-200 selection:text-gold-900">
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-slate-50 selection:bg-indigo-200 selection:text-indigo-900">
       
       {/* BACKGROUND LAYERS */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(#444 1px, transparent 1px)', backgroundSize: '32px 32px' }} 
+      {/* 1. Grid Pattern */}
+      <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(#6366f1 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }} 
       />
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-mana-50/50 via-white/0 to-white pointer-events-none" />
+      
+      {/* 2. Ambient Spotlight (Pusat Cahaya) */}
+      <div className="absolute top-0 left-0 right-0 h-[80vh] bg-gradient-to-b from-indigo-50/80 via-white/50 to-white -z-10 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-200/20 blur-[120px] rounded-full -z-10" />
 
-      {/* BACKGROUND DECORATION */}
+      {/* BACKGROUND DECORATION (Magic Circles) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <motion.div 
           animate={{ rotate: 360 }}
-          transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[25%] -left-[10%] w-[90vw] h-[90vw] md:w-[800px] md:h-[800px] border-[1px] border-mana-300/20 rounded-full border-dashed"
+          transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-[30%] -left-[10%] w-[100vw] h-[100vw] md:w-[900px] md:h-[900px] border border-indigo-900/40 rounded-full border-dashed"
         />
         <motion.div 
           animate={{ rotate: -360 }}
-          transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[10%] -right-[15%] w-[80vw] h-[80vw] md:w-[700px] md:h-[700px] border-[1px] border-gold-400/20 rounded-full"
+          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[20%] -right-[20%] w-[70vw] h-[70vw] md:w-[600px] md:h-[600px] border border-amber-900/40 rounded-full"
         />
 
         {/* Floating Icons */}
-        <FloatingRune icon={<SiReact />} color="#61DAFB" top="15%" left="5%" delay={0} size="lg" />
-        <FloatingRune icon={<SiTypescript />} color="#3178C6" top="10%" right="5%" delay={1} size="lg" />
-        <FloatingRune icon={<SiLaravel />} color="#FF2D20" bottom="20%" left="8%" delay={0.5} />
-        <FloatingRune icon={<SiTailwindcss />} color="#38B2AC" bottom="15%" right="10%" delay={2} />
-        <FloatingRune icon={<SiFirebase />} color="#FFCA28" top="45%" left="2%" delay={1.5} />
-        <FloatingRune icon={<SiJavascript />} color="#F7DF1E" top="50%" right="2%" delay={2.5} />
+        <FloatingRune icon={<SiReact />} color="#61DAFB" top="15%" left="8%" delay={0} size="lg" />
+        <FloatingRune icon={<SiTypescript />} color="#3178C6" top="12%" right="8%" delay={1.5} size="lg" />
+        <FloatingRune icon={<SiLaravel />} color="#FF2D20" bottom="25%" left="10%" delay={0.8} />
+        <FloatingRune icon={<SiTailwindcss />} color="#38B2AC" bottom="20%" right="12%" delay={2.2} />
+        <FloatingRune icon={<SiFirebase />} color="#FFCA28" top="45%" left="3%" delay={1.2} />
+        <FloatingRune icon={<SiJavascript />} color="#F7DF1E" top="55%" right="3%" delay={2.8} />
       </div>
 
       {/* MAIN CONTENT AREA */}
-      <div className="relative z-10 max-w-5xl mx-auto space-y-8 mt-10">
+      <div className="relative z-10 max-w-6xl mx-auto space-y-10 mt-10">
         
-        {/* --- 1. HUD STATUS BAR (PENGGANTI DYNAMIC ISLAND) --- */}
+        {/* --- 1. HUD STATUS BAR (Glassmorphism Tech) --- */}
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "backOut" }}
           className="flex justify-center"
         >
-          <div className="flex items-center gap-3 px-5 py-2 bg-slate-900/90 backdrop-blur-md border border-mana-500/50 rounded-lg shadow-[0_0_15px_rgba(56,189,248,0.4)] relative overflow-hidden group">
-            {/* Animasi Scanline Halus di dalam HUD */}
-            <div className="absolute top-0 left-0 w-[5px] h-full bg-white/20 skew-x-12 animate-shine opacity-0 group-hover:opacity-100" />
+          <div className="flex items-center gap-4 px-6 py-2.5 bg-white/70 backdrop-blur-xl border border-white/50 ring-1 ring-indigo-100 rounded-full shadow-lg shadow-indigo-500/10 relative overflow-hidden">
             
-            {/* Icon User */}
-            <div className="p-1.5 bg-mana-600 rounded text-white">
-              <HiUser size={12} />
+            {/* Glossy Reflection */}
+            <div className="absolute top-0 left-0 w-full h-[50%] bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
+            
+            {/* Status Indicator */}
+            <div className="flex items-center gap-2">
+               <span className="relative flex h-2.5 w-2.5">
+                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+               </span>
+               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-heading">Online</span>
             </div>
 
-            <div className="flex flex-col items-start leading-none">
-              <span className="text-[10px] text-slate-400 font-bold tracking-widest uppercase">Class</span>
-              <span className="text-white text-xs font-bold text-mana-200 font-heading tracking-wide">Front-End Dev</span>
+            <div className="h-4 w-[1px] bg-slate-300" />
+
+            {/* Character Info */}
+            <div className="flex items-center gap-3">
+              <div className="p-1.5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-md text-white shadow-sm">
+                 <HiUser size={12} />
+              </div>
+              <div className="flex flex-col leading-none">
+                 <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Class</span>
+                 <span className="text-xs font-black text-indigo-900 font-heading">Front-End Engineer</span>
+              </div>
             </div>
 
-            <div className="h-6 w-[1px] bg-white/10 mx-2" />
+            <div className="h-4 w-[1px] bg-slate-300" />
 
-            <div className="flex flex-col items-start leading-none">
-              <span className="text-[10px] text-slate-400 font-bold tracking-widest uppercase">Level</span>
-              <span className="text-white text-xs font-bold text-gold-400 font-heading">Junior</span>
+            {/* Level Info */}
+            <div className="flex flex-col leading-none text-right">
+               <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Level</span>
+               <span className="text-xs font-black text-amber-500 font-heading">Junior Lvl. 6</span>
             </div>
           </div>
         </motion.div>
 
-        {/* MAIN TITLE */}
-        <motion.h1 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-mana-900 leading-[1.1] tracking-tight drop-shadow-sm"
-        >
-          Hi, <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600">I am</span> <br />
-          Muhammad Rigi <span className="relative inline-block text-gold-500 z-10">
-            Yuda Syahrial
-            <motion.div 
-              initial={{ scaleX: 0 }} 
-              animate={{ scaleX: 1 }} 
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="absolute -bottom-2 left-0 w-full h-2 bg-gold-200/60 rounded-full -z-10 origin-left" 
-            />
-          </span>
-        </motion.h1>
+        {/* --- 2. MAIN TYPOGRAPHY (Hero Title) --- */}
+        <div className="space-y-4">
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-lg md:text-xl font-bold text-slate-500 font-heading tracking-widest uppercase"
+            >
+              System Initialized. Welcome, User.
+            </motion.p>
 
-        {/* SUBTITLE */}
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="text-lg md:text-2xl text-slate-500 max-w-3xl mx-auto font-body px-4 leading-relaxed font-medium"
-        >
-          A 6th Semester <span className="font-bold text-mana-600 border-b-2 border-mana-200">Student</span> at Nusa Putra University
-        </motion.p>
+            <motion.h1 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-slate-900 leading-[1.1] tracking-tight drop-shadow-sm"
+            >
+              Hi, I am <br />
+              {/* Nama dengan Gradasi Emas Mewah */}
+              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-b from-amber-400 via-amber-500 to-amber-700 drop-shadow-sm z-10">
+                Muhammad Rigi
+              </span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600">
+                Yuda Syahrial
+              </span>
+            </motion.h1>
 
-        {/* --- 2. TOMBOL UNIFORM STYLE (DUA-DUANYA 3D) --- */}
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="text-lg md:text-2xl text-slate-500 max-w-3xl mx-auto font-body px-4 leading-relaxed font-medium"
+            >
+              A 6th Semester <span className="font-bold text-blue-600 bg-indigo-50 px-1 rounded border border-indigo-100">Informatics Student</span> at Nusa Putra University
+            </motion.p>
+        </div>
+
+        {/* --- 3. ACTION BUTTONS (Physical 3D Crystal) --- */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-10 pb-20"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center pb-20 pt-4"
         >
           
-          {/* A. TOMBOL EMAS (PRIMARY QUEST) */}
+          {/* A. TOMBOL EMAS (Quest Log) */}
           <button 
             onClick={scrollToQuest}
-            className="group relative w-72 h-16 rounded-xl transition-all duration-200 hover:-translate-y-1 active:translate-y-1"
+            className="group relative w-72 h-16 rounded-xl transition-all duration-200 hover:-translate-y-1 active:translate-y-1 active:shadow-none"
           >
-            {/* 3D Shadow Layer (Dark Gold) */}
-            <div className="absolute inset-0 translate-y-[6px] rounded-xl bg-[#92400e]" />
+            {/* 3D Base (Shadow) */}
+            <div className="absolute inset-0 translate-y-[6px] rounded-xl bg-amber-800 transition-transform group-active:translate-y-[2px]" />
             
-            {/* Main Surface (Gold Gradient) */}
-            <div className="absolute inset-0 bg-gradient-to-b from-gold-300 via-gold-400 to-gold-500 rounded-xl border-t border-white/40 flex items-center justify-center gap-3 shadow-lg overflow-hidden">
-               {/* Shine Animation */}
-               <div className="absolute top-0 -left-[150%] w-[100%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-1000 group-hover:left-[150%]" />
+            {/* Main Surface */}
+            <div className="absolute inset-0 bg-gradient-to-b from-amber-300 via-amber-400 to-amber-500 rounded-xl border-t border-white/50 border-b border-amber-600 flex items-center justify-center gap-3 shadow-xl overflow-hidden group-active:translate-y-[4px]">
+               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
                
-               <HiLightningBolt className="text-2xl text-white drop-shadow-[0_2px_0_rgba(146,64,14,0.8)] animate-pulse" />
-               <span className="font-heading font-black tracking-widest text-base uppercase text-white drop-shadow-[0_2px_0_rgba(146,64,14,1)]">
+               <HiLightningBolt className="text-2xl text-white drop-shadow-[0_2px_0_rgba(146,64,14,0.6)] animate-pulse" />
+               <span className="font-heading font-black tracking-widest text-sm uppercase text-white drop-shadow-[0_2px_0_rgba(146,64,14,0.8)]">
                  Open Quest Log
                </span>
+
+               {/* Shine Sweep */}
+               <div className="absolute top-0 -left-[150%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-1000 group-hover:left-[150%]" />
             </div>
           </button>
 
-          {/* B. TOMBOL BIRU (SECONDARY CRYSTAL) - STYLE DISAMAKAN */}
+          {/* B. TOMBOL INDIGO (Contact Me) */}
           <button 
             onClick={() => window.open('mailto:rigiyuda123@gmail.com', '_blank')}
-            className="group relative w-72 h-16 rounded-xl transition-all duration-200 hover:-translate-y-1 active:translate-y-1"
+            className="group relative w-72 h-16 rounded-xl transition-all duration-200 hover:-translate-y-1 active:translate-y-1 active:shadow-none"
           >
-             {/* 3D Shadow Layer (Dark Blue) */}
-             <div className="absolute inset-0 translate-y-[6px] rounded-xl bg-[#0369a1]" />
+             {/* 3D Base (Shadow) */}
+             <div className="absolute inset-0 translate-y-[6px] rounded-xl bg-indigo-900 transition-transform group-active:translate-y-[2px]" />
 
-             {/* Main Surface (Mana Blue Gradient) */}
-             <div className="absolute inset-0 bg-gradient-to-b from-mana-400 via-mana-500 to-mana-600 rounded-xl border-t border-white/40 flex items-center justify-center gap-3 shadow-lg overflow-hidden">
-                {/* Shine Animation */}
-                <div className="absolute top-0 -left-[150%] w-[100%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-1000 group-hover:left-[150%]" />
+             {/* Main Surface */}
+             <div className="absolute inset-0 bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600 rounded-xl border-t border-white/40 border-b border-indigo-800 flex items-center justify-center gap-3 shadow-xl overflow-hidden group-active:translate-y-[4px]">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
 
-                <HiMail className="text-2xl text-white drop-shadow-[0_2px_0_rgba(3,105,161,0.8)]" />
-                <span className="font-heading font-black tracking-widest text-base uppercase text-white drop-shadow-[0_2px_0_rgba(3,105,161,1)]">
+                <HiMail className="text-2xl text-white drop-shadow-[0_2px_0_rgba(49,46,129,0.6)]" />
+                <span className="font-heading font-black tracking-widest text-sm uppercase text-white drop-shadow-[0_2px_0_rgba(49,46,129,0.8)]">
                   Contact Me
                 </span>
+                
+                {/* Shine Sweep */}
+                <div className="absolute top-0 -left-[150%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-1000 group-hover:left-[150%]" />
              </div>
           </button>
 
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* SCROLL INDICATOR (HUD Element) */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
         transition={{ duration: 2, delay: 2, repeat: Infinity }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-mana-300 flex flex-col items-center gap-2 pointer-events-none"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
       >
-        <span className="text-[10px] tracking-[0.3em] uppercase font-bold">Start Game</span>
-        <div className="w-[2px] h-6 bg-gradient-to-b from-mana-300 to-transparent" />
+        <div className="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full border border-white/40 shadow-sm">
+          <span className="text-[9px] tracking-[0.3em] uppercase font-bold text-slate-500">Initialize</span>
+        </div>
+        <div className="w-[1px] h-12 bg-gradient-to-b from-slate-400 to-transparent" />
       </motion.div>
 
     </section>

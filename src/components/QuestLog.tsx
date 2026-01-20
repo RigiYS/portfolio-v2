@@ -40,7 +40,7 @@ export const QuestLog = () => {
       />
       
       {/* Ambient Glow (Emas Pudar di belakang judul) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-gold-400/10 blur-[120px] -z-10 rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-amber-400/10 blur-[120px] -z-10 rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         
@@ -52,7 +52,7 @@ export const QuestLog = () => {
              viewport={{ once: true }}
              className="inline-block mb-2"
           >
-            <span className="px-3 py-1 rounded border border-mana-200 bg-white/50 text-[10px] font-bold text-mana-500 tracking-[0.2em] uppercase">
+            <span className="px-3 py-1 rounded border border-blue-200 bg-white/50 text-[10px] font-bold text-blue-500 tracking-[0.2em] uppercase">
               Portfolio Archive
             </span>
           </motion.div>

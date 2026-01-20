@@ -22,17 +22,17 @@ export const ProjectCard = ({ title, role, desc, tech, rank, stats, image }: Pro
       className="group relative h-full flex flex-col"
     >
       {/* 1. LAYER BAYANGAN SOFT (Glow Effect) */}
-      <div className="absolute inset-0 bg-slate-200/50 rounded-[2rem] transform translate-y-4 scale-95 blur-xl transition-all duration-500 group-hover:translate-y-6 group-hover:bg-gold-400/30" />
+      <div className="absolute inset-0 bg-slate-200/50 rounded-[2rem] transform translate-y-4 scale-95 blur-xl transition-all duration-500 group-hover:translate-y-6 group-hover:bg-amber-400/30" />
 
       {/* 2. CONTAINER UTAMA (Clean Glass Artifact) */}
-      <div className="relative flex flex-col h-full bg-white rounded-[2rem] overflow-hidden border border-white/80 shadow-2xl ring-1 ring-slate-100 transition-all duration-300 group-hover:ring-gold-300">
+      <div className="relative flex flex-col h-full bg-white rounded-[2rem] overflow-hidden border border-white/80 shadow-2xl ring-1 ring-slate-100 transition-all duration-300 group-hover:ring-amber-300">
         
         {/* --- IMAGE HEADER (Static Window) --- */}
         <div className="relative w-full aspect-video overflow-hidden bg-slate-100 group/image">
           
           {/* RANK MEDALLION (Pojok Kanan Atas) */}
           <div className="absolute top-4 right-4 z-30">
-             <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-gold-300 to-gold-600 flex items-center justify-center shadow-lg border-2 border-white ring-1 ring-gold-200 group-hover:scale-110 transition-transform">
+             <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center shadow-lg border-2 border-white ring-1 ring-amber-200 group-hover:scale-110 transition-transform">
                 <span className="font-heading font-black text-white text-lg md:text-xl drop-shadow-md">{rank}</span>
              </div>
              <div className="absolute -bottom-1 -left-1 text-white drop-shadow-md animate-pulse">
@@ -75,7 +75,7 @@ export const ProjectCard = ({ title, role, desc, tech, rank, stats, image }: Pro
           {/* Header Section */}
           <div className="mb-5">
              <div className="flex items-center justify-between mb-2">
-                <span className="px-3 py-1 rounded-full bg-mana-50 border border-mana-100 text-[9px] font-extrabold tracking-[0.1em] text-mana-600 uppercase">
+                <span className="px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[9px] font-extrabold tracking-[0.1em] text-blue-600 uppercase">
                   {role}
                 </span>
                 {/* Dekorasi titik */}
@@ -86,7 +86,7 @@ export const ProjectCard = ({ title, role, desc, tech, rank, stats, image }: Pro
                 </div>
              </div>
              
-             <h3 className="text-2xl font-heading font-black text-slate-800 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-mana-500 transition-all">
+             <h3 className="text-2xl font-heading font-black text-slate-800 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-blue-500 transition-all">
                {title}
              </h3>
           </div>
@@ -99,7 +99,7 @@ export const ProjectCard = ({ title, role, desc, tech, rank, stats, image }: Pro
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-3 mb-6">
             {stats.map((stat, idx) => (
-              <div key={idx} className="bg-white border border-slate-100 p-2.5 rounded-xl flex items-center gap-3 shadow-sm group/stat hover:border-mana-200 transition-colors">
+              <div key={idx} className="bg-white border border-slate-100 p-2.5 rounded-xl flex items-center gap-3 shadow-sm group/stat hover:border-blue-200 transition-colors">
                 <div className={`p-2 rounded-lg transition-colors ${idx === 0 ? 'bg-blue-50 text-blue-500 group-hover/stat:bg-blue-100' : 'bg-amber-50 text-amber-500 group-hover/stat:bg-amber-100'}`}>
                   {idx === 0 ? <HiServer size={14} /> : <HiChip size={14} />}
                 </div>
@@ -116,7 +116,7 @@ export const ProjectCard = ({ title, role, desc, tech, rank, stats, image }: Pro
             {/* Chips */}
             <div className="flex flex-wrap gap-2 mb-5">
               {tech.slice(0, 4).map((t) => (
-                <span key={t} className="px-2.5 py-1 text-[10px] font-bold text-slate-500 bg-white border border-slate-200 rounded-full shadow-sm hover:border-gold-300 hover:text-gold-600 transition-colors cursor-default">
+                <span key={t} className="px-2.5 py-1 text-[10px] font-bold text-slate-500 bg-white border border-slate-200 rounded-full shadow-sm hover:border-amber-300 hover:text-amber-600 transition-colors cursor-default">
                   {t}
                 </span>
               ))}
@@ -130,7 +130,7 @@ export const ProjectCard = ({ title, role, desc, tech, rank, stats, image }: Pro
                <div className="absolute inset-0 translate-y-[4px] rounded-xl bg-[#0369a1]" />
                
                {/* Button Face */}
-               <div className="absolute inset-0 bg-gradient-to-b from-mana-400 to-mana-600 rounded-xl border-t border-white/30 flex items-center justify-center gap-2 shadow-md overflow-hidden group-hover/btn:from-mana-300 group-hover/btn:to-mana-500">
+               <div className="absolute inset-0 bg-gradient-to-b from-blue-400 to-blue-600 rounded-xl border-t border-white/30 flex items-center justify-center gap-2 shadow-md overflow-hidden group-hover/btn:from-blue-300 group-hover/btn:to-blue-500">
                   <HiCode className="text-lg text-white drop-shadow-md" />
                   <span className="font-heading font-black text-xs uppercase tracking-widest text-white drop-shadow-[0_2px_0_rgba(3,105,161,1)]">
                     Access Source Code

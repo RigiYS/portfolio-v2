@@ -37,13 +37,13 @@ export const SkillTree = () => {
   const SkillRune = ({ skill }: { skill: Skill }) => (
     <div className="relative group mx-4 cursor-pointer py-4">
       {/* Container Rune: Glassmorphism Lebih Tebal & Premium */}
-      <div className="w-24 h-24 md:w-32 md:h-32 bg-white/60 backdrop-blur-xl border-2 border-white/50 rounded-[1.5rem] flex flex-col items-center justify-center p-4 relative overflow-hidden transition-all duration-300 group-hover:border-gold-400 group-hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] group-hover:-translate-y-2 group-hover:bg-white/90">
+      <div className="w-24 h-24 md:w-32 md:h-32 bg-white/60 backdrop-blur-xl border-2 border-white/50 rounded-[1.5rem] flex flex-col items-center justify-center p-4 relative overflow-hidden transition-all duration-300 group-hover:border-amber-400 group-hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] group-hover:-translate-y-2 group-hover:bg-white/90">
         
         {/* Dekorasi Sudut Emas (Corner Accents - Dipertajam) */}
-        <div className="absolute top-0 left-0 w-3 h-3 border-t-[3px] border-l-[3px] border-mana-200 rounded-tl-xl group-hover:border-gold-500 transition-colors duration-300" />
-        <div className="absolute top-0 right-0 w-3 h-3 border-t-[3px] border-r-[3px] border-mana-200 rounded-tr-xl group-hover:border-gold-500 transition-colors duration-300" />
-        <div className="absolute bottom-0 left-0 w-3 h-3 border-b-[3px] border-l-[3px] border-mana-200 rounded-bl-xl group-hover:border-gold-500 transition-colors duration-300" />
-        <div className="absolute bottom-0 right-0 w-3 h-3 border-b-[3px] border-r-[3px] border-mana-200 rounded-br-xl group-hover:border-gold-500 transition-colors duration-300" />
+        <div className="absolute top-0 left-0 w-3 h-3 border-t-[3px] border-l-[3px] border-blue-200 rounded-tl-xl group-hover:border-amber-500 transition-colors duration-300" />
+        <div className="absolute top-0 right-0 w-3 h-3 border-t-[3px] border-r-[3px] border-blue-200 rounded-tr-xl group-hover:border-amber-500 transition-colors duration-300" />
+        <div className="absolute bottom-0 left-0 w-3 h-3 border-b-[3px] border-l-[3px] border-blue-200 rounded-bl-xl group-hover:border-amber-500 transition-colors duration-300" />
+        <div className="absolute bottom-0 right-0 w-3 h-3 border-b-[3px] border-r-[3px] border-blue-200 rounded-br-xl group-hover:border-amber-500 transition-colors duration-300" />
 
         {/* Background Glow Halus (Aura Item) */}
         <div 
@@ -62,7 +62,7 @@ export const SkillTree = () => {
         </div>
 
         {/* Nama Skill (Pill Style) */}
-        <span className="relative z-10 text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest font-heading px-2 py-0.5 rounded-full bg-slate-100 group-hover:bg-white group-hover:text-gold-600 transition-colors shadow-sm">
+        <span className="relative z-10 text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest font-heading px-2 py-0.5 rounded-full bg-slate-100 group-hover:bg-white group-hover:text-amber-600 transition-colors shadow-sm">
           {skill.name}
         </span>
       </div>
@@ -81,7 +81,7 @@ export const SkillTree = () => {
       />
       
       {/* Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-mana-100/30 via-transparent to-transparent -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-100/30 via-transparent to-transparent -z-10" />
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 mb-16 text-center relative z-10">
@@ -91,7 +91,7 @@ export const SkillTree = () => {
            viewport={{ once: true }}
            className="inline-block mb-2"
         >
-          <span className="px-3 py-1 rounded border border-mana-200 bg-white/50 text-[10px] font-bold text-mana-500 tracking-[0.2em] uppercase">
+          <span className="px-3 py-1 rounded border border-blue-200 bg-white/50 text-[10px] font-bold text-blue-500 tracking-[0.2em] uppercase">
             Arsenal & Tools
           </span>
         </motion.div>
