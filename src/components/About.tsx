@@ -31,7 +31,7 @@ export const About = () => {
              Player Status
            </motion.div>
            <h2 className="text-4xl md:text-5xl font-heading font-black text-slate-900">
-             The <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-300 to-blue-600">Ace</span>
+             The <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-300 to-blue-600">Player</span>
            </h2>
         </div>
 
