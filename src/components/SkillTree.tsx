@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import type { JSX } from 'react';
 // Pastikan install: npm install react-icons
-import { SiTypescript, SiJavascript, SiPhp, SiPython, SiReact, SiTailwindcss, SiFramer, SiLaravel, SiGit, SiFigma, SiFirebase, SiAndroid, SiHtml5, SiCss3, SiBootstrap } from 'react-icons/si';
+import { SiTypescript, SiJavascript, SiPhp, SiReact, SiTailwindcss, SiLaravel, SiGit, SiFigma, SiFirebase, SiAndroid, SiHtml5, SiCss3 } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
 
 // Tipe Data
@@ -37,7 +37,7 @@ export const SkillTree = () => {
   const SkillRune = ({ skill }: { skill: Skill }) => (
     <div className="relative group mx-4 cursor-pointer py-4">
       {/* Container Rune: Glassmorphism Lebih Tebal & Premium */}
-      <div className="w-24 h-24 md:w-32 md:h-32 bg-white/60 backdrop-blur-xl border-2 border-white/50 rounded-[1.5rem] flex flex-col items-center justify-center p-4 relative overflow-hidden transition-all duration-300 group-hover:border-amber-400 group-hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] group-hover:-translate-y-2 group-hover:bg-white/90">
+      <div className="w-24 h-24 md:w-32 md:h-32 bg-white/60 backdrop-blur-xl border-2 border-white/50 rounded-3xl flex flex-col items-center justify-center p-4 relative overflow-hidden transition-all duration-300 group-hover:border-amber-400 group-hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] group-hover:-translate-y-2 group-hover:bg-white/90">
         
         {/* Dekorasi Sudut Emas (Corner Accents - Dipertajam) */}
         <div className="absolute top-0 left-0 w-3 h-3 border-t-[3px] border-l-[3px] border-blue-200 rounded-tl-xl group-hover:border-amber-500 transition-colors duration-300" />
@@ -47,12 +47,12 @@ export const SkillTree = () => {
 
         {/* Background Glow Halus (Aura Item) */}
         <div 
-          className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br from-transparent via-white to-transparent"
+          className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-linear-to-br from-transparent via-white to-transparent"
           style={{ backgroundColor: skill.color }} // Fallback color tint
         />
 
         {/* Shine Animation on Hover */}
-        <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-700 group-hover:animate-shine" />
+        <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-700 group-hover:animate-shine" />
 
         {/* Icon (Floating Animation) */}
         <div className="relative z-10 mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 drop-shadow-sm">
@@ -81,7 +81,7 @@ export const SkillTree = () => {
       />
       
       {/* Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-100/30 via-transparent to-transparent -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-blue-100/30 via-transparent to-transparent -z-10" />
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 mb-16 text-center relative z-10">
@@ -97,14 +97,14 @@ export const SkillTree = () => {
         </motion.div>
 
         <h2 className="text-4xl md:text-5xl font-heading font-black text-slate-900 mb-4">
-          Ancient <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600">Runes</span>
+          Ancient <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-300 to-amber-600">Runes</span>
         </h2>
         
         {/* Garis Dekorasi */}
         <div className="flex items-center justify-center gap-2 mb-6 opacity-50">
-          <div className="w-12 h-[1px] bg-slate-700" />
+          <div className="w-12 h-px bg-slate-700" />
           <div className="w-2 h-2 rotate-45 border border-slate-800" />
-          <div className="w-12 h-[1px] bg-slate-700" />
+          <div className="w-12 h-px bg-slate-700" />
         </div>
 
         <p className="text-slate-500 font-body max-w-2xl mx-auto text-lg">
@@ -144,8 +144,8 @@ export const SkillTree = () => {
       </div>
 
       {/* Gradient Mask untuk efek Fade di Kiri & Kanan */}
-      <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none" />
-      <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-32 h-full bg-linear-to-r from-slate-50 to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-32 h-full bg-linear-to-l from-slate-50 to-transparent z-20 pointer-events-none" />
     </section>
   );
 };

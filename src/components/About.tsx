@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { HiUser, HiAcademicCap, HiLightningBolt, HiSparkles, HiDownload } from 'react-icons/hi';
-import { SiReact, SiLaravel } from 'react-icons/si';
 
 export const About = () => {
   
@@ -16,8 +15,8 @@ export const About = () => {
     <section id="about" className="py-24 relative overflow-hidden bg-slate-50 scroll-mt-20">
       
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-[100px] -z-10 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-100/30 rounded-full blur-[100px] -z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-150 h-150 bg-blue-100/40 rounded-full blur-[100px] -z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-125 h-125 bg-amber-100/30 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4">
         
@@ -32,7 +31,7 @@ export const About = () => {
              Player Status
            </motion.div>
            <h2 className="text-4xl md:text-5xl font-heading font-black text-slate-900">
-             The <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-600">Ace</span>
+             The <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-300 to-blue-600">Ace</span>
            </h2>
         </div>
 
@@ -43,7 +42,7 @@ export const About = () => {
             <div className="absolute inset-0 border-2 border-dashed border-blue-200 rounded-full animate-spin-slow opacity-30 scale-110" />
             <div className="absolute inset-0 border border-amber-300 rounded-full animate-reverse-spin opacity-30 scale-125" />
 
-            <div className="relative aspect-square rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl ring-1 ring-slate-200 transform transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1">
+            <div className="relative aspect-square rounded-4xl overflow-hidden border-4 border-white shadow-2xl ring-1 ring-slate-200 transform transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1">
                <img 
                  src="/foto-profil.jpeg" 
                  alt="Profile" 
@@ -51,7 +50,7 @@ export const About = () => {
                />
                <div className="absolute inset-0 bg-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none mix-blend-overlay" />
                <div className="absolute bottom-4 left-4 bg-slate-900/90 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 shadow-lg flex items-center gap-3">
-                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center font-black text-lg border border-white/30">
+                 <div className="w-10 h-10 rounded-lg bg-linear-to-br from-amber-400 to-amber-600 flex items-center justify-center font-black text-lg border border-white/30">
                    21
                  </div>
                  <div className="flex flex-col">
@@ -117,7 +116,7 @@ export const About = () => {
                 download="CV_Muhammad_Rigi.pdf" // Nama file saat diunduh user
                 className="flex-1 group relative h-12 rounded-xl transition-all duration-200 active:scale-95 hover:-translate-y-1 block"
               >
-                 <div className="absolute inset-0 translate-y-[4px] rounded-xl bg-slate-800" />
+                 <div className="absolute inset-0 translate-y-1 rounded-xl bg-slate-800" />
                  <div className="absolute inset-0 bg-slate-900 rounded-xl border-t border-white/20 flex items-center justify-center gap-2 text-white font-bold tracking-wider text-xs uppercase shadow-lg group-hover:bg-slate-800">
                     <HiDownload className="text-lg" />
                     Download CV
@@ -127,12 +126,12 @@ export const About = () => {
               {/* TOMBOL 2: LIHAT TRANSKRIP */}
               {/* Menggunakan tag <a> dengan target='_blank' (tab baru) */}
               <a 
-                href="/transkirp.pdf" 
+                href="/transkrip.pdf" 
                 target="_blank" // Membuka di tab baru
                 rel="noopener noreferrer" // Security best practice
                 className="flex-1 group relative h-12 rounded-xl transition-all duration-200 active:scale-95 hover:-translate-y-1 block"
               >
-                 <div className="absolute inset-0 translate-y-[4px] rounded-xl bg-amber-600" />
+                 <div className="absolute inset-0 translate-y-1 rounded-xl bg-amber-600" />
                  <div className="absolute inset-0 bg-amber-400 rounded-xl border-t border-white/40 flex items-center justify-center gap-2 text-white font-bold tracking-wider text-xs uppercase shadow-lg group-hover:bg-amber-500">
                     <HiAcademicCap className="text-lg" />
                     View Transcript

@@ -40,7 +40,7 @@ export const QuestLog = () => {
       />
       
       {/* Ambient Glow (Emas Pudar di belakang judul) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-amber-400/10 blur-[120px] -z-10 rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-100 bg-amber-400/10 blur-[120px] -z-10 rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         
@@ -63,14 +63,14 @@ export const QuestLog = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-heading font-black text-slate-900 mb-4"
           >
-            Quest Log <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600">Completed</span>
+            Quest Log <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-300 to-amber-600">Completed</span>
           </motion.h2>
           
           {/* Garis Dekorasi */}
           <div className="flex items-center justify-center gap-2 mb-6 opacity-50">
-            <div className="w-12 h-[1px] bg-slate-700" />
+            <div className="w-12 h-px bg-slate-700" />
             <div className="w-2 h-2 rotate-45 border border-slate-800" />
-            <div className="w-12 h-[1px] bg-slate-700" />
+            <div className="w-12 h-px bg-slate-700" />
           </div>
 
           <p className="text-slate-500 font-body max-w-2xl mx-auto text-lg">

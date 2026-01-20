@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { HiHeart, HiLightningBolt } from 'react-icons/hi';
 import { SiGithub, SiLinkedin, SiInstagram, SiWhatsapp } from 'react-icons/si';
 
@@ -22,8 +21,8 @@ export const Footer = () => {
       />
       
       {/* Ambient Glow (blue Blue di kiri, amber di kanan) */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-amber-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-0 w-125 h-125 bg-blue-600/20 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-125 h-125 bg-amber-600/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         
@@ -39,7 +38,7 @@ export const Footer = () => {
             </div>
             <h2 className="text-3xl md:text-5xl font-heading font-black text-white mb-4">
               Ready to start a <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-600">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-300 to-blue-600">
                 New Quest?
               </span>
             </h2>
@@ -77,7 +76,7 @@ export const Footer = () => {
         </div>
 
         {/* DIVIDER */}
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-slate-700 to-transparent mb-8" />
+        <div className="h-px w-full bg-linear-to-r from-transparent via-slate-700 to-transparent mb-8" />
 
         {/* BOTTOM: Credits */}
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 font-bold tracking-wider">

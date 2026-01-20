@@ -53,8 +53,8 @@ export const Navbar = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="group relative w-10 h-10 flex items-center justify-center cursor-pointer ml-1 mr-1"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 rotate-45 rounded-lg border border-blue-300 shadow-md group-hover:rotate-[225deg] transition-transform duration-700 ease-in-out" />
-          <div className="absolute inset-1 border border-white/30 rotate-45 rounded-md group-hover:rotate-[225deg] transition-transform duration-700 ease-in-out" />
+          <div className="absolute inset-0 bg-linear-to-br from-blue-500 to-blue-700 rotate-45 rounded-lg border border-blue-300 shadow-md group-hover:rotate-225 transition-transform duration-700 ease-in-out" />
+          <div className="absolute inset-1 border border-white/30 rotate-45 rounded-md group-hover:rotate-225 transition-transform duration-700 ease-in-out" />
           <span className="relative z-10 text-white font-heading font-black text-lg drop-shadow-md select-none">
             R
           </span>
@@ -100,7 +100,7 @@ export const Navbar = () => {
         </div>
 
         {/* SEPARATOR */}
-        <div className="h-6 w-[1px] bg-slate-300/50 mx-1" />
+        <div className="h-6 w-px bg-slate-300/50 mx-1" />
 
         {/* ACTION BUTTON: MINI CRYSTAL 3D */}
         <button 
@@ -108,16 +108,16 @@ export const Navbar = () => {
           className="group/btn relative px-4 py-2 md:px-5 md:py-2 rounded-xl transition-all active:scale-95"
         >
           {/* 3D Shadow Bottom */}
-          <div className="absolute inset-0 translate-y-[3px] rounded-xl bg-[#0369a1] transition-transform group-hover/btn:translate-y-[4px]" />
+          <div className="absolute inset-0 translate-y-0.75 rounded-xl bg-[#0369a1] transition-transform group-hover/btn:translate-y-1" />
           
           {/* Button Face */}
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-400 to-blue-600 rounded-xl border-t border-white/40 flex items-center justify-center gap-2 shadow-md overflow-hidden group-hover/btn:from-blue-300 group-hover/btn:to-blue-500 group-hover/btn:-translate-y-0.5 transition-all">
+          <div className="absolute inset-0 bg-linear-to-b from-blue-400 to-blue-600 rounded-xl border-t border-white/40 flex items-center justify-center gap-2 shadow-md overflow-hidden group-hover/btn:from-blue-300 group-hover/btn:to-blue-500 group-hover/btn:-translate-y-0.5 transition-all">
              <HiMail className="text-white text-lg drop-shadow-sm group-hover/btn:animate-pulse" />
              <span className="hidden md:inline font-heading font-black text-[10px] uppercase tracking-widest text-white drop-shadow-md">
                Hire Me
              </span>
              {/* Shine Sweep */}
-             <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-700 group-hover/btn:left-[100%]" />
+             <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-700 group-hover/btn:left-full" />
           </div>
           
           {/* Spacer */}

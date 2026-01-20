@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from 'framer-motion';
-import { HiLightningBolt, HiMail, HiUser, HiSparkles } from 'react-icons/hi'; 
-import { SiReact, SiTypescript, SiLaravel, SiTailwindcss, SiFirebase, SiFramer, SiJavascript } from 'react-icons/si';
+import { HiLightningBolt, HiMail, HiUser } from 'react-icons/hi'; 
+import { SiReact, SiTypescript, SiLaravel, SiTailwindcss, SiFirebase, SiJavascript } from 'react-icons/si';
 
 // Komponen Floating Rune (Dipertajam visualnya)
 const FloatingRune = ({ icon, color, top, left, right, bottom, delay, size = "md" }: any) => {
   const sizeClasses = size === "lg" ? "w-16 h-16 text-4xl" : "w-12 h-12 text-2xl";
+   
   const style: any = { top, left, right, bottom }; 
   
   return (
@@ -16,8 +18,8 @@ const FloatingRune = ({ icon, color, top, left, right, bottom, delay, size = "md
       className={`absolute ${sizeClasses} flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] z-0 pointer-events-none`}
     >
       {/* Sudut Tech */}
-      <div className="absolute -top-[1px] -left-[1px] w-3 h-3 border-t-2 border-l-2 border-amber-400/50 rounded-tl-lg" />
-      <div className="absolute -bottom-[1px] -right-[1px] w-3 h-3 border-b-2 border-r-2 border-amber-400/50 rounded-br-lg" />
+      <div className="absolute -top-px -left-px w-3 h-3 border-t-2 border-l-2 border-amber-400/50 rounded-tl-lg" />
+      <div className="absolute -bottom-px -right-px w-3 h-3 border-b-2 border-r-2 border-amber-400/50 rounded-br-lg" />
       
       {/* Icon Glow */}
       <div style={{ color }} className="drop-shadow-lg filter">{icon}</div>
@@ -41,20 +43,20 @@ export const Hero = () => {
       />
       
       {/* 2. Ambient Spotlight (Pusat Cahaya) */}
-      <div className="absolute top-0 left-0 right-0 h-[80vh] bg-gradient-to-b from-indigo-50/80 via-white/50 to-white -z-10 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-200/20 blur-[120px] rounded-full -z-10" />
+      <div className="absolute top-0 left-0 right-0 h-[80vh] bg-linear-to-b from-indigo-50/80 via-white/50 to-white -z-10 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-indigo-200/20 blur-[120px] rounded-full -z-10" />
 
       {/* BACKGROUND DECORATION (Magic Circles) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <motion.div 
           animate={{ rotate: 360 }}
           transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[30%] -left-[10%] w-[100vw] h-[100vw] md:w-[900px] md:h-[900px] border border-indigo-900/40 rounded-full border-dashed"
+          className="absolute -top-[30%] -left-[10%] w-screen h-[100vw] md:w-225 md:h-225 border border-indigo-900/40 rounded-full border-dashed"
         />
         <motion.div 
           animate={{ rotate: -360 }}
           transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[20%] -right-[20%] w-[70vw] h-[70vw] md:w-[600px] md:h-[600px] border border-amber-900/40 rounded-full"
+          className="absolute top-[20%] -right-[20%] w-[70vw] h-[70vw] md:w-150 md:h-150 border border-amber-900/40 rounded-full"
         />
 
         {/* Floating Icons */}
@@ -79,7 +81,7 @@ export const Hero = () => {
           <div className="flex items-center gap-4 px-6 py-2.5 bg-white/70 backdrop-blur-xl border border-white/50 ring-1 ring-indigo-100 rounded-full shadow-lg shadow-indigo-500/10 relative overflow-hidden">
             
             {/* Glossy Reflection */}
-            <div className="absolute top-0 left-0 w-full h-[50%] bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-[50%] bg-linear-to-b from-white/60 to-transparent pointer-events-none" />
             
             {/* Status Indicator */}
             <div className="flex items-center gap-2">
@@ -90,11 +92,11 @@ export const Hero = () => {
                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-heading">Online</span>
             </div>
 
-            <div className="h-4 w-[1px] bg-slate-300" />
+            <div className="h-4 w-px bg-slate-300" />
 
             {/* Character Info */}
             <div className="flex items-center gap-3">
-              <div className="p-1.5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-md text-white shadow-sm">
+              <div className="p-1.5 bg-linear-to-br from-indigo-500 to-purple-600 rounded-md text-white shadow-sm">
                  <HiUser size={12} />
               </div>
               <div className="flex flex-col leading-none">
@@ -103,7 +105,7 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="h-4 w-[1px] bg-slate-300" />
+            <div className="h-4 w-px bg-slate-300" />
 
             {/* Level Info */}
             <div className="flex flex-col leading-none text-right">
@@ -132,11 +134,11 @@ export const Hero = () => {
             >
               Hi, I am <br />
               {/* Nama dengan Gradasi Emas Mewah */}
-              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-b from-amber-400 via-amber-500 to-amber-700 drop-shadow-sm z-10">
+              <span className="relative inline-block text-transparent bg-clip-text bg-linear-to-b from-amber-400 via-amber-500 to-amber-700 drop-shadow-sm z-10">
                 Muhammad Rigi
               </span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-blue-600">
                 Yuda Syahrial
               </span>
             </motion.h1>
@@ -165,10 +167,10 @@ export const Hero = () => {
             className="group relative w-72 h-16 rounded-xl transition-all duration-200 hover:-translate-y-1 active:translate-y-1 active:shadow-none"
           >
             {/* 3D Base (Shadow) */}
-            <div className="absolute inset-0 translate-y-[6px] rounded-xl bg-amber-800 transition-transform group-active:translate-y-[2px]" />
+            <div className="absolute inset-0 translate-y-1.5 rounded-xl bg-amber-800 transition-transform group-active:translate-y-0.5" />
             
             {/* Main Surface */}
-            <div className="absolute inset-0 bg-gradient-to-b from-amber-300 via-amber-400 to-amber-500 rounded-xl border-t border-white/50 border-b border-amber-600 flex items-center justify-center gap-3 shadow-xl overflow-hidden group-active:translate-y-[4px]">
+            <div className="absolute inset-0 bg-linear-to-b from-amber-300 via-amber-400 to-amber-500 rounded-xl border-t border-white/50 border-b flex items-center justify-center gap-3 shadow-xl overflow-hidden group-active:translate-y-1">
                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
                
                <HiLightningBolt className="text-2xl text-white drop-shadow-[0_2px_0_rgba(146,64,14,0.6)] animate-pulse" />
@@ -177,7 +179,7 @@ export const Hero = () => {
                </span>
 
                {/* Shine Sweep */}
-               <div className="absolute top-0 -left-[150%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-1000 group-hover:left-[150%]" />
+               <div className="absolute top-0 -left-[150%] w-[50%] h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-1000 group-hover:left-[150%]" />
             </div>
           </button>
 
@@ -187,10 +189,10 @@ export const Hero = () => {
             className="group relative w-72 h-16 rounded-xl transition-all duration-200 hover:-translate-y-1 active:translate-y-1 active:shadow-none"
           >
              {/* 3D Base (Shadow) */}
-             <div className="absolute inset-0 translate-y-[6px] rounded-xl bg-indigo-900 transition-transform group-active:translate-y-[2px]" />
+             <div className="absolute inset-0 translate-y-1.5 rounded-xl bg-indigo-900 transition-transform group-active:translate-y-0.5" />
 
              {/* Main Surface */}
-             <div className="absolute inset-0 bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600 rounded-xl border-t border-white/40 border-b border-indigo-800 flex items-center justify-center gap-3 shadow-xl overflow-hidden group-active:translate-y-[4px]">
+             <div className="absolute inset-0 bg-linear-to-b from-blue-400 via-blue-500 to-blue-600 rounded-xl border-t border-white/40 border-b flex items-center justify-center gap-3 shadow-xl overflow-hidden group-active:translate-y-1">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
 
                 <HiMail className="text-2xl text-white drop-shadow-[0_2px_0_rgba(49,46,129,0.6)]" />
@@ -199,7 +201,7 @@ export const Hero = () => {
                 </span>
                 
                 {/* Shine Sweep */}
-                <div className="absolute top-0 -left-[150%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-1000 group-hover:left-[150%]" />
+                <div className="absolute top-0 -left-[150%] w-[50%] h-full bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-all duration-1000 group-hover:left-[150%]" />
              </div>
           </button>
 
@@ -216,7 +218,7 @@ export const Hero = () => {
         <div className="px-3 py-1 bg-white/50 backdrop-blur-sm rounded-full border border-white/40 shadow-sm">
           <span className="text-[9px] tracking-[0.3em] uppercase font-bold text-slate-500">Initialize</span>
         </div>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-slate-400 to-transparent" />
+        <div className="w-px h-12 bg-linear-to-b from-slate-400 to-transparent" />
       </motion.div>
 
     </section>
