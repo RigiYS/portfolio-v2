@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@400;600&display=swap');
+
+/* Settingan Tema JRPG Global */
+@theme {
+  /* ... konfigurasi theme yang sudah ada ... */
+  --animate-shine-down: shine-down 1.5s infinite linear;
+  
+  @keyframes shine-down {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(200%); }
+  }
+  /* Animasi Scanner Hologram */
+  --animate-shine-down: shine-down 2s infinite linear;
+  
+  @keyframes shine-down {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(200%); opacity: 0; }
+  }
+}
+
+body {
+  /* Gunakan class utility langsung */
+  @apply bg-slate-50 text-slate-900 font-sans overflow-x-hidden;
+  font-family: 'Quicksand', sans-serif;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+.animate-shine {
+  animation: shine 1s ease-in-out;
+}
