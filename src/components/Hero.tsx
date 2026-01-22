@@ -110,7 +110,7 @@ export const Hero = () => {
             {/* Level Info */}
             <div className="flex flex-col leading-none text-right">
                <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Level</span>
-               <span className="text-xs font-black text-amber-500 font-heading">Junior Lvl. 6</span>
+               <span className="text-xs font-black text-amber-500 font-heading">Junior</span>
             </div>
           </div>
         </motion.div>

@@ -9,25 +9,27 @@ export const QuestLog = () => {
       role: "E-Commerce",
       rank: "S" as const,
       // Ganti dengan screenshot asli Anda
-      image: "https://picsum.photos/id/3/800/450", 
+      image: "/", 
       desc: "Platform e-commerce modern dengan arsitektur Headless. Mengelola state keranjang belanja yang persisten dan integrasi API yang aman.",
       tech: ["React.js", "Zustand", "Tailwind", "Axios"],
       stats: [
         { label: "State", value: "Zustand" },
         { label: "Perf", value: "98/100" },
-      ]
+      ],
+      link: "https://techgears.example.com"
     },
     {
       title: "Larisin App",
       role: "Mobile POS",
       rank: "S" as const,
-      image: "https://picsum.photos/id/119/800/450",
+      image: "/larisin.jpg",
       desc: "Aplikasi POS (Point of Sales) real-time untuk UMKM. Berjalan offline-first dan sinkronisasi otomatis saat online.",
       tech: ["React Native", "Firebase", "TypeScript"],
       stats: [
         { label: "DB", value: "NoSQL" },
         { label: "Mode", value: "Offline" },
-      ]
+      ],
+      link: "https://github.com/RigiYS/larisinApp.git"
     }
   ];
 
