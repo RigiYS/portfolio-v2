@@ -16,7 +16,7 @@ export const QuestLog = () => {
         { label: "State", value: "Zustand" },
         { label: "Perf", value: "98/100" },
       ],
-      link: "https://techgears.example.com"
+      link: "https://github.com/RigiYS/techgearsProject.git"
     },
     {
       title: "Larisin App",
