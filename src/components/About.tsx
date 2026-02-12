@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   HiUser,
   HiAcademicCap,
@@ -25,14 +25,14 @@ export const About = () => {
 
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="inline-block px-3 py-1 rounded border border-blue-200 bg-white/50 text-[10px] font-bold text-blue-500 tracking-[0.2em] uppercase mb-2"
           >
             Player Status
-          </motion.div>
+          </m.div>
           <h2 className="text-4xl md:text-5xl font-heading font-black text-slate-900">
             The{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-300 to-blue-600">
@@ -114,7 +114,7 @@ export const About = () => {
                       </span>
                     </div>
                     <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                      <motion.div
+                      <m.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${stat.value}%` }}
                         transition={{ duration: 1, delay: 0.2 + idx * 0.1 }}

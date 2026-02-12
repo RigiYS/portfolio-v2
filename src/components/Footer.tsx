@@ -1,4 +1,4 @@
-import { HiHeart, HiLightningBolt } from "react-icons/hi";
+import { HiLightningBolt } from "react-icons/hi";
 import { SiGithub, SiLinkedin, SiInstagram, SiWhatsapp } from "react-icons/si";
 
 export const Footer = () => {
@@ -99,10 +99,10 @@ export const Footer = () => {
 
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 border border-slate-700">
-              Built with <HiHeart className="text-red-500" /> & React
+              Built with Vite & React
             </span>
             <span className="hover:text-blue-400 cursor-pointer transition-colors">
-              v.2.0.26 (Stable)
+              v.2.0.26
             </span>
           </div>
         </div>

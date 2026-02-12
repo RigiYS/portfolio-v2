@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useState, useEffect } from "react";
 import {
   HiHome,
@@ -37,7 +37,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <motion.nav
+    <m.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
@@ -75,7 +75,7 @@ export const Navbar = () => {
               }`}
             >
               {hoveredTab === item.id && (
-                <motion.div
+                <m.div
                   layoutId="nav-bg"
                   className="absolute inset-0 bg-white rounded-lg shadow-sm border border-slate-200/50 -z-10"
                   initial={{ opacity: 0 }}
@@ -120,6 +120,6 @@ export const Navbar = () => {
           </div>
         </button>
       </div>
-    </motion.nav>
+    </m.nav>
   );
 };

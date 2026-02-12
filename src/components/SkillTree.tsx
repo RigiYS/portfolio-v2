@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import type { JSX } from "react";
 import {
   SiTypescript,
@@ -89,7 +89,7 @@ export const SkillTree = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-blue-100/30 via-transparent to-transparent -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 mb-16 text-center relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -98,7 +98,7 @@ export const SkillTree = () => {
           <span className="px-3 py-1 rounded border border-blue-200 bg-white/50 text-[10px] font-bold text-blue-500 tracking-[0.2em] uppercase">
             Tools
           </span>
-        </motion.div>
+        </m.div>
 
         <h2 className="text-4xl md:text-5xl font-heading font-black text-slate-900 mb-4">
           Ancient{" "}
@@ -121,7 +121,7 @@ export const SkillTree = () => {
 
       <div className="flex flex-col gap-6 md:gap-10 mask-linear-gradient relative z-10">
         <div className="relative flex overflow-hidden group py-2">
-          <motion.div
+          <m.div
             className="flex min-w-full shrink-0"
             animate={{ x: ["0%", "-25%"] }}
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
@@ -129,11 +129,11 @@ export const SkillTree = () => {
             {[...row1, ...row1, ...row1, ...row1].map((skill, idx) => (
               <SkillRune key={`r1-${idx}`} skill={skill} />
             ))}
-          </motion.div>
+          </m.div>
         </div>
 
         <div className="relative flex overflow-hidden group py-2">
-          <motion.div
+          <m.div
             className="flex min-w-full shrink-0"
             animate={{ x: ["-25%", "0%"] }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
@@ -141,7 +141,7 @@ export const SkillTree = () => {
             {[...row2, ...row2, ...row2, ...row2].map((skill, idx) => (
               <SkillRune key={`r2-${idx}`} skill={skill} />
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
 

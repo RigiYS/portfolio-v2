@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/purity */
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { HiCode, HiServer, HiSparkles, HiShieldCheck } from "react-icons/hi";
 import {
   SiReact,
@@ -86,7 +86,7 @@ export const ProjectCard = ({
   link,
 }: ProjectProps) => {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -198,6 +198,6 @@ export const ProjectCard = ({
           </div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };

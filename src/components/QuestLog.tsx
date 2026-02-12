@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ProjectCard } from "./ProjectCard";
 
 export const QuestLog = () => {
@@ -48,7 +48,7 @@ export const QuestLog = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -57,9 +57,9 @@ export const QuestLog = () => {
             <span className="px-3 py-1 rounded border border-blue-200 bg-white/50 text-[10px] font-bold text-blue-500 tracking-[0.2em] uppercase">
               Portfolio Archive
             </span>
-          </motion.div>
+          </m.div>
 
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -69,7 +69,7 @@ export const QuestLog = () => {
             <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-300 to-amber-600">
               Completed
             </span>
-          </motion.h2>
+          </m.h2>
 
           <div className="flex items-center justify-center gap-2 mb-6 opacity-50">
             <div className="w-12 h-px bg-slate-700" />
