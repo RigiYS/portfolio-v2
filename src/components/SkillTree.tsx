@@ -96,7 +96,7 @@ export const SkillTree = () => {
           className="inline-block mb-2"
         >
           <span className="px-3 py-1 rounded border border-blue-200 bg-white/50 text-[10px] font-bold text-blue-500 tracking-[0.2em] uppercase">
-            Arsenal & Tools
+            Tools
           </span>
         </motion.div>
 
