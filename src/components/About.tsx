@@ -59,10 +59,10 @@ export const About = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
-                    Level
+                    Age
                   </span>
                   <span className="text-xs font-bold font-heading">
-                    Mahasiswa
+                    Student
                   </span>
                 </div>
               </div>
